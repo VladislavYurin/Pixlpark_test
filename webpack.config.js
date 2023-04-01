@@ -6,7 +6,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "docs"),
 		filename: "main.js",
-		publicPath: "/Sber-dogfood/"
+		publicPath: "/Pixlpark_test/"
 	},
 	devServer: {
 		static: path.resolve(__dirname, "./docs"),
