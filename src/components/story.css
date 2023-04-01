@@ -1,0 +1,31 @@
+.storyContainer {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #45A29E;
+    border-radius: 20px;
+    margin-top: 10px;
+    background-color: #1F2833;
+    color: #C5C6C7;
+}
+
+.scoreContainer {
+    width: 10%;
+    text-align: center;
+    align-items: center;
+}
+
+.titleContainer {
+    border: 1px solid #45A29E;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+    font-size: 20px;
+    color: #66FCF1;
+}
+
+.autorAndTimeContainer {
+    width: 30%;
+    align-items: center;
+    text-align: center;
+}
