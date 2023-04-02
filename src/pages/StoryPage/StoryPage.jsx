@@ -3,21 +3,16 @@ import { withRouter, Link } from "react-router-dom";
 import Api from "../../Api";
 import Comment from "../../components/comment.jsx";
 import "./StoryPage.css";
+import { unixToHumanTime } from "../../function";
+import Loader from "../../components/Loader";
 
 const StoryPage = ({ match }) => {
     const [api, setApi] = useState(new Api());
     const [story, setStory] = useState(null);
     const [updateReplies, setUpdateReplies] = useState(false);
 
-    function unixToHumanTime(unixTime) {
-        const date = new Date(unixTime * 1000);
-        const humanTime = date.toLocaleString();
-        return humanTime;
-    }
-
     useEffect(() => {
         const id = match.params.id;
-
         api.getStoryByID(id)
             .then(res => res.json())
             .then(data => {
@@ -26,7 +21,7 @@ const StoryPage = ({ match }) => {
     }, [api, match.params.id, updateReplies]);
 
     if (!story) {
-        return <div>Loading...</div>;
+        return <Loader />;
     }
 
     return (
@@ -41,7 +36,7 @@ const StoryPage = ({ match }) => {
             <div className="author">Author: {story.by}</div>
             <div className="time">{unixToHumanTime(story.time)}</div>
             <div className="url">{story.url}</div>
-            <div className="descendants">Replies: {story.descendants}</div>
+            <div className="commentsCount">Replies: {story.descendants}</div>
             {story.kids &&
                 story.kids.map(commentId => (
                     <div key={commentId}>
@@ -52,5 +47,5 @@ const StoryPage = ({ match }) => {
     );
 };
 
-export default withRouter(StoryPage); 
+export default withRouter(StoryPage);
 

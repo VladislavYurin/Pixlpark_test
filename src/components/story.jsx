@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import "./story.css";
 import { Link } from "react-router-dom";
+import "./story.css";
+import {unixToHumanTime} from "../function.js";
 
 export default ({ storyInfo }) => {
-    function unixToHumanTime(unixTime) {
-        const date = new Date(unixTime * 1000);
-        const humanTime = date.toLocaleString();
-        return humanTime;
-    }
 
     return <Link to={`/story/${storyInfo.id}`} className="cardsLink" style={{ textDecoration: 'none' }}>
         <div className="storyContainer" >

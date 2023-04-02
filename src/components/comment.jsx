@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Api from "../Api";
 import "./comment.css";
+import {unixToHumanTime} from "../function.js";
 
-const Comment = ({ commentId, margin = 0 }) => {
+const Comment = ({ commentId, margin = 40 }) => {
     const [comment, setComment] = useState();
     const [api, setApi] = useState(new Api());
     const [openNestedComments, setOpenNestedComments] = useState(false);
@@ -15,11 +16,6 @@ const Comment = ({ commentId, margin = 0 }) => {
             });
     }, []);
 
-    function unixToHumanTime(unixTime) {
-        const date = new Date(unixTime * 1000);
-        const humanTime = date.toLocaleString();
-        return humanTime;
-    }
     return (
         <>
             {comment && <div className="comment" style={{ marginLeft: `${margin}px` }} onClick={() => { setOpenNestedComments(!openNestedComments) }} >

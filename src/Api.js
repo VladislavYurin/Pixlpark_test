@@ -2,6 +2,7 @@ class Api {
     constructor() {
         this.path = "https://hacker-news.firebaseio.com/v0";
     }
+    
     getNewStoriesID() {
         return fetch(`${this.path}/newstories.json?print=pretty`, {
             headers: {}

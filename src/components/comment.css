@@ -9,3 +9,8 @@
 .text {
     padding-top: 20px;
 }
+
+.nestedCommentsCount {
+    margin-top: 20px;
+    color: #45A29E;
+}

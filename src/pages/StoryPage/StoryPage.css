@@ -23,3 +23,9 @@
     border-radius: 20px;
     padding: 10px;
 }
+
+.commentsCount {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #45A29E;
+}
