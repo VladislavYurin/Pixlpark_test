@@ -33,7 +33,7 @@ const StoryPage = ({ match }) => {
                 Update replies
             </button>
             <h2 className="title">{story.title}</h2>
-            <div className="author">Author: {story.by}</div>
+            <div className="author">{story.by}</div>
             <div className="time">{unixToHumanTime(story.time)}</div>
             <div className="url">{story.url}</div>
             <div className="commentsCount">Replies: {story.descendants}</div>

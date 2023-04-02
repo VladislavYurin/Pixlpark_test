@@ -19,7 +19,7 @@ const Comment = ({ commentId, margin = 40 }) => {
     return (
         <>
             {comment && <div className="comment" style={{ marginLeft: `${margin}px` }} onClick={() => { setOpenNestedComments(!openNestedComments) }} >
-                <div>{comment.by}</div>
+                <div className="author">{comment.by}</div>
                 <div>{unixToHumanTime(comment.time)}</div>
                 <div className="text" dangerouslySetInnerHTML={{ __html: comment.text }} />
                 {comment.kids ? <div className="nestedCommentsCount">Replies: {comment.kids.length}</div> : <div className="nestedCommentsCount">Replies: 0</div>}
